@@ -1,8 +1,0 @@
----------------------------------------------------
-Report for cell lab1_mt
-   Instance path: lab1_mt
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         10        100.0
-                               LUTGATE	         10        100.0
-                                 IOBUF	         14        100.0
