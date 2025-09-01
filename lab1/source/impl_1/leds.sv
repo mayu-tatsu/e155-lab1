@@ -2,8 +2,7 @@ module leds(
 	input  logic       clk,
 	input  logic       reset,
 	input  logic [3:0] s,
-	output logic [2:0] led,
-	output logic [6:0] seg
+	output logic [2:0] led
 );
 
 	logic int_osc;
@@ -27,8 +26,10 @@ module leds(
 	// end
 	
 	always_ff @(posedge int_osc) begin
-		if (reset == 0) counter <= 0;
-		else 			counter <= counter + 1;
+		if      (reset == 0)   counter <= 0;
+		// else if (~counter[22]) counter <= counter + 1;
+		// else 			       counter <= 0;
+		else                   counter <= counter + 1;
 	end
 			
 	assign led[2] = counter[22];
