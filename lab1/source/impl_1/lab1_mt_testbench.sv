@@ -4,21 +4,24 @@ module lab1_mt_testbench();
 
 	logic       clk, reset;
 	logic [3:0] s;
-	logic [2:0] led;
-	logic [6:0] seg;
+	logic [2:0] led, ledexpected;
+	logic [6:0] seg, segexpected;
+	
+	logic [31:0] vectornum, errors;
+	logic [13:0]  testvectors[10000:0];
 	
 	lab1_mt dut(clk, reset, s, led, seg);
 	
 	// clock
 	always
 		begin
-			clk = 1; #5; cl = 0; #5;
+			clk = 1; #5; clk = 0; #5;
 		end
 		
 	// load vectors and pulse reset
 	initial
 		begin
-			$readmemb("lab1_mt_testvectors.tv", testvectors);
+			$readmemb("./lab1_mt_testvectors.txt", testvectors);
 			vectornum = 0; errors = 0;
 			reset = 1; #22 reset = 0;
 		end
@@ -32,23 +35,21 @@ module lab1_mt_testbench();
 		
 	always @(negedge clk)
 		if (~reset) begin
-			if (led != ledexpected) begin
+			if (led !== ledexpected) begin
 				$display("Error: inputs = %b", {s});
 				$display(" outputs = %b (%b expected)", led, ledexpected);
 				errors = errors + 1;
 			end
-			else if (seg != segexpected) begin
+			else if (seg !== segexpected) begin
 				$display("Error: inputs = %b", {s});
 				$display(" outputs = %b (%b expected)", seg, segexpected);
 				errors = errors + 1;
 			end
 			vectornum = vectornum + 1;
-			if (testvectors[vectornum] === 4'bx) begin
+			if (testvectors[vectornum] === 14'bx) begin
 				$display("%d tests completed with %d errors",
 						 vectornum, errors);
 				$stop;
 			end
-		end
-endmodule
-	
+		end	
 endmodule

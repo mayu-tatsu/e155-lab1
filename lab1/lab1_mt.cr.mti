@@ -1,0 +1,22 @@
+C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module sev_seg
+
+Top level modules:
+	sev_seg
+
+} {} {}} C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module sev_seg_testbench
+
+Top level modules:
+	sev_seg_testbench
+
+} {} {}} C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module leds_testbench
+
+Top level modules:
+	leds_testbench
+
+} {} {}}

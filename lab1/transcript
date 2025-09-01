@@ -13,3 +13,779 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
+vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv
+# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 01:19:51 on Sep 01,2025
+# vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv 
+# -- Compiling module sev_seg_testbench
+# 
+# Top level modules:
+# 	sev_seg_testbench
+# End time: 01:19:51 on Sep 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg.sv
+# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 01:19:51 on Sep 01,2025
+# vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg.sv 
+# -- Compiling module sev_seg
+# 
+# Top level modules:
+# 	sev_seg
+# End time: 01:19:51 on Sep 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv
+# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 01:19:51 on Sep 01,2025
+# vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv 
+# -- Compiling module leds_testbench
+# 
+# Top level modules:
+# 	leds_testbench
+# End time: 01:19:51 on Sep 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds.sv
+# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 01:19:51 on Sep 01,2025
+# vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds.sv 
+# -- Compiling module leds
+# 
+# Top level modules:
+# 	leds
+# End time: 01:19:51 on Sep 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv
+# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 01:19:51 on Sep 01,2025
+# vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv 
+# -- Compiling module lab1_mt_testbench
+# 
+# Top level modules:
+# 	lab1_mt_testbench
+# End time: 01:19:51 on Sep 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt.sv
+# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 01:19:51 on Sep 01,2025
+# vlog -reportprogress 300 -work work C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt.sv 
+# -- Compiling module lab1_mt
+# 
+# Top level modules:
+# 	lab1_mt
+# End time: 01:19:51 on Sep 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui work.lab1_mt_testbench work.leds_testbench work.sev_seg_testbench -voptargs=+acc -L iCE40UP
+# vsim -gui work.lab1_mt_testbench work.leds_testbench work.sev_seg_testbench -voptargs="+acc" -L iCE40UP 
+# Start time: 01:20:14 on Sep 01,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+add wave  \
+sim:/lab1_mt_testbench/clk \
+sim:/lab1_mt_testbench/reset \
+sim:/lab1_mt_testbench/s \
+sim:/lab1_mt_testbench/led \
+sim:/lab1_mt_testbench/ledexpected \
+sim:/lab1_mt_testbench/seg \
+sim:/lab1_mt_testbench/segexpected \
+sim:/lab1_mt_testbench/vectornum \
+sim:/lab1_mt_testbench/errors \
+sim:/lab1_mt_testbench/testvectors
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+run 200
+run 200
+run 200
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 200
+
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+run 200
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+restart-f
+# invalid command name "restart-f"
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 100000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 1000
+run 2000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 5000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 100000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+run 100000
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 175000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 150000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+run 10000
+run 10000
+run 10000
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 174000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+run 100
+run 100
+run 100
+run 100
+
+run 100
+
+run 100
+run 100
+run 100
+run 100
+run 100
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 175000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+force led[2] 0
+run 175000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+add wave  \
+sim:/leds_testbench/clk \
+sim:/leds_testbench/reset \
+sim:/leds_testbench/s \
+sim:/leds_testbench/led \
+sim:/leds_testbench/ledexpected \
+sim:/leds_testbench/vectornum \
+sim:/leds_testbench/errors \
+sim:/leds_testbench/testvectors
+force led[2] 0
+run 175000
+#         16 tests completed with          1 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /leds_testbench
+# Break in Module leds_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv line 46
+# Load canceled
+run 175000
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(52)
+#    Time: 175 ns  Iteration: 1  Instance: /lab1_mt_testbench
+# Break in Module lab1_mt_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv line 52
+run 175000
+# Error: inputs = xxxx
+#  outputs = 1111111 (xxxxxxx expected)
+#         17 tests completed with          1 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 185 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 175000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+force led[2] 0
+run 175000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+force led[2] 0
+force led[2] 0
+run 175000
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+add wave  \
+sim:/sev_seg_testbench/clk \
+sim:/sev_seg_testbench/reset \
+sim:/sev_seg_testbench/s \
+sim:/sev_seg_testbench/seg \
+sim:/sev_seg_testbench/segexpected \
+sim:/sev_seg_testbench/vectornum \
+sim:/sev_seg_testbench/errors \
+sim:/sev_seg_testbench/testvectors
+force led[2] 0
+# ** UI-Msg (Error) (suppressible): (vsim-4008) Object 'led[2]' not found.
+# 
+run 175000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 175000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 175000
+# ** Warning: (vsim-7) Failed to open readmem file "./lab1_mt_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/lab1_mt_testbench.sv(24)
+#    Time: 0 ps  Iteration: 0  Instance: /lab1_mt_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./leds_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/leds_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /leds_testbench
+# ** Warning: (vsim-7) Failed to open readmem file "./sev_seg_testvectors.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(23)
+#    Time: 0 ps  Iteration: 0  Instance: /sev_seg_testbench
+# Error: inputs = xxxx
+#  outputs = 1111111 (xxxxxxx expected)
+#          1 tests completed with          1 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 25 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.lab1_mt_testbench(fast)
+# Loading work.lab1_mt(fast)
+# Loading work.leds(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sev_seg(fast)
+# Loading work.leds_testbench(fast)
+# Loading work.sev_seg_testbench(fast)
+run 175000
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+# Error: inputs = 1111
+#  outputs = x00 (000 expected)
+#         16 tests completed with          0 errors
+# ** Note: $stop    : C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv(46)
+#    Time: 175 ns  Iteration: 1  Instance: /sev_seg_testbench
+# Break in Module sev_seg_testbench at C:/Users/mtatsumi/my_designs/e155-lab1/lab1/source/impl_1/sev_seg_testbench.sv line 46
