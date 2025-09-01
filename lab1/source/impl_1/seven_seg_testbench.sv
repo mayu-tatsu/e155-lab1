@@ -18,7 +18,7 @@ module lab1_mt_testbench();
 	// load vectors and pulse reset
 	initial
 		begin
-			$readmemb("lab1_mt_testvectors.tv", testvectors);
+			$readmemb("lab1_mt_test.tv", testvectors);
 			vectornum = 0; errors = 0;
 			reset = 1; #22 reset = 0;
 		end

@@ -1,13 +1,12 @@
 `timescale 1 ns / 1 ps
 
-module lab1_mt_testbench();
+module leds_testbench();
 
 	logic       clk, reset;
 	logic [3:0] s;
 	logic [2:0] led;
-	logic [6:0] seg;
 	
-	lab1_mt dut(clk, reset, s, led, seg);
+	leds dut(clk, reset, s, led);
 	
 	// clock
 	always
@@ -18,7 +17,7 @@ module lab1_mt_testbench();
 	// load vectors and pulse reset
 	initial
 		begin
-			$readmemb("lab1_mt_testvectors.tv", testvectors);
+			$readmemb("leds_testvectors.tv", testvectors);
 			vectornum = 0; errors = 0;
 			reset = 1; #22 reset = 0;
 		end
@@ -27,7 +26,7 @@ module lab1_mt_testbench();
 	// apply test vectors on rising edge
 	always @(posedge clk)
 		begin
-			#1; {s, ledexpected, segexpected} = testvectors[vectornum];
+			#1; {s, ledexpected} = testvectors[vectornum];
 		end
 		
 	always @(negedge clk)
@@ -35,11 +34,6 @@ module lab1_mt_testbench();
 			if (led != ledexpected) begin
 				$display("Error: inputs = %b", {s});
 				$display(" outputs = %b (%b expected)", led, ledexpected);
-				errors = errors + 1;
-			end
-			else if (seg != segexpected) begin
-				$display("Error: inputs = %b", {s});
-				$display(" outputs = %b (%b expected)", seg, segexpected);
 				errors = errors + 1;
 			end
 			vectornum = vectornum + 1;
