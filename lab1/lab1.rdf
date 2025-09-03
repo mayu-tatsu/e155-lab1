@@ -12,7 +12,7 @@
         <Source name="source/impl_1/sev_seg.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog"/>
         </Source>
-        <Source name="source/impl_1/lab1_mt_testbench.sv" type="Verilog" type_short="Verilog">
+        <Source name="source/impl_1/lab1_mt_testbench.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options VerilogStandard="System Verilog"/>
         </Source>
         <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">

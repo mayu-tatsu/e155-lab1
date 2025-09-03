@@ -1,5 +1,5 @@
 module leds(
-	input  logic       clk, reset,
+	input  logic       reset,
 	input  logic [3:0] s,
 	output logic [2:0] led
 );
