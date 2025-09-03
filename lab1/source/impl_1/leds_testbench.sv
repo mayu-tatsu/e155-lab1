@@ -9,7 +9,7 @@ module leds_testbench();
 	logic [31:0] vectornum, errors;
 	logic [6:0]  testvectors[10000:0];
 	
-	leds dut(clk, reset, s, led);
+	leds dut(reset, s, led);
 	
 	// clock
 	always

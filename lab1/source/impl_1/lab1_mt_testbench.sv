@@ -10,7 +10,7 @@ module lab1_mt_testbench();
 	logic [31:0] vectornum, errors;
 	logic [13:0]  testvectors[10000:0];
 	
-	lab1_mt dut(clk, reset, s, led, seg);
+	lab1_mt dut(reset, s, led, seg);
 	
 	// clock
 	always
