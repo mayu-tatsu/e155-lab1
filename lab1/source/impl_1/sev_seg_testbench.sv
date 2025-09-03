@@ -1,3 +1,12 @@
+// Mayu Tatsumi; mtatsumi@g.hmc.edu
+// 2025-09-01
+
+// Compares outputs of sev_seg module to expected values
+// using testvectors stored in sev_seg_testvectors.txt.
+// Outputs number of tests and errors to console.
+
+// Note: Input and output are active low.
+
 `timescale 1 ns / 1 ps
 
 module sev_seg_testbench();
@@ -11,7 +20,7 @@ module sev_seg_testbench();
 	
 	sev_seg dut(s, seg);
 	
-	// clock
+	// clock generation
 	always
 		begin
 			clk = 1; #5; clk = 0; #5;
@@ -25,13 +34,14 @@ module sev_seg_testbench();
 			reset = 1; #22 reset = 0;
 		end
 		
-	// only significant inputs (no clk, reset)
+	// only significant inputs (n0 reset)
 	// apply test vectors on rising edge
 	always @(posedge clk)
 		begin
 			#1; {s, segexpected} = testvectors[vectornum];
 		end
 		
+	// check outputs on falling edge
 	always @(negedge clk)
 		if (~reset) begin
 			if (seg !== segexpected) begin

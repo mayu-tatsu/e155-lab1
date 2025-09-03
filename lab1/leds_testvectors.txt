@@ -1,3 +1,11 @@
+// Mayu Tatsumi; mtatsumi@g.hmc.edu
+// 2025-09-01
+
+// s[3:0]_led[2:0]
+
+// s is inverted
+// Assumes led[2], blinking LED, is always 0
+
 1111_000
 1110_001
 1101_001

@@ -1,3 +1,10 @@
+// Mayu Tatsumi; mtatsumi@g.hmc.edu
+// 2025-09-01
+
+// s[3:0]_seg[6:0]
+
+// s and seg are inverted
+
 1111_1000000
 1110_1111001
 1101_0100100

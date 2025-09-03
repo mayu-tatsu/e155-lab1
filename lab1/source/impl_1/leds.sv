@@ -1,3 +1,11 @@
+// Mayu Tatsumi; mtatsumi@g.hmc.edu
+// 2025-09-01
+
+// Uses a high-speed internal oscillator to blink an LED at ~2.4 Hz.
+// Also lights two other LEDs based on the values of a 4-bit input.
+
+// Note: Input s[3:0] is active low.
+
 module leds(
 	input  logic       reset,
 	input  logic [3:0] s,
@@ -6,16 +14,14 @@ module leds(
 
 	logic int_osc;
 	logic [31:0] counter;
-	
-	// given 2.4 Hz goal, 24 MHz oscillator
-	// need 2 oscillations
-	// 24 * 10^6 / 2.4 / 2 = 5,000,000
-	
-	// counter = 0 ~ 5,000,000 : OFF
-	// counter = 5,000,000 ~ 10,000,000 : ON
 		
 	HSOSC #(.CLKHF_DIV(2'b01))
 		hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+
+	// given 2.4 Hz goal, 24 MHz oscillator
+	
+	// counter = 0 ~ 5,000,000 : OFF
+	// counter = 5,000,000 ~ 10,000,000 : ON
 		
 	always_ff @(posedge int_osc) begin
 		if      (reset == 0)             counter <= 1'b0;
@@ -25,7 +31,7 @@ module leds(
 	
 	assign led[2] = (counter > 32'd5000000);
 
-	assign led[0] = ~s[0] ^ ~s[1];
-	assign led[1] = ~s[2] & ~s[3];
+	assign led[0] = ~s[0] ^ ~s[1]; // XOR
+	assign led[1] = ~s[2] & ~s[3]; // AND
 	
 endmodule

@@ -1,3 +1,11 @@
+// Mayu Tatsumi; mtatsumi@g.hmc.edu
+// 2025-09-01
+
+// Uses combinational logic to convert a 4-bit binary input
+// to a 7-segment display output, between 0 and F (hexadecimal).
+
+// Note: Input and output are active low.
+
 module sev_seg(
 	input  logic [3:0] s,
 	output logic [6:0] seg
@@ -5,6 +13,7 @@ module sev_seg(
 
 always_comb
 	case(s)
+		// s[3:0]    = seg[6:0]
 		4'b1111: seg = 7'b1000000;
 		4'b1110: seg = 7'b1111001;
 		4'b1101: seg = 7'b0100100;

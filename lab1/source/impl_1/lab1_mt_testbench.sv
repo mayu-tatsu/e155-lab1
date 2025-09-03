@@ -1,3 +1,12 @@
+// Mayu Tatsumi; mtatsumi@g.hmc.edu
+// 2025-09-01
+
+// Compares outputs of lab1_mt module to expected values
+// using testvectors stored in lab1_mt_testvectors.txt.
+// Outputs number of tests and errors to console.
+
+// Note: Input s[3:0] and output seg[6:0] are active low.
+
 `timescale 1 ns / 1 ps
 
 module lab1_mt_testbench();
@@ -12,7 +21,7 @@ module lab1_mt_testbench();
 	
 	lab1_mt dut(reset, s, led, seg);
 	
-	// clock
+	// clock generation
 	always
 		begin
 			clk = 1; #5; clk = 0; #5;
@@ -26,13 +35,14 @@ module lab1_mt_testbench();
 			reset = 1; #22 reset = 0;
 		end
 		
-	// only significant inputs (no clk, reset)
+	// only significant inputs (no reset)
 	// apply test vectors on rising edge
 	always @(posedge clk)
 		begin
 			#1; {s, ledexpected, segexpected} = testvectors[vectornum];
 		end
 		
+	// check outputs on falling edge
 	always @(negedge clk)
 		if (~reset) begin
 			if (led !== ledexpected) begin
